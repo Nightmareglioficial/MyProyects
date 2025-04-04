@@ -4,26 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestión de Proyectos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gestión de Proyectos</h1>
+  <header>
+    <h1>Gestión de Proyectos</h1>
+  </header>
 
-  <!-- Entrada para añadir proyectos -->
-  <div>
-    <input type="text" id="new-project" placeholder="Nombre del proyecto">
-    <button id="add">Añadir Proyecto</button>
-  </div>
+  <main>
+    <!-- Botones de autenticación y carga de API -->
+    <section class="auth-section">
+      <div class="button-container">
+        <button id="authenticate" class="btn primary-btn">Autenticar Usuario</button>
+        <button id="load" class="btn secondary-btn">Cargar API de Google Drive</button>
+      </div>
+    </section>
 
-  <!-- Lista de proyectos -->
-  <div id="project-list">
-    <h2>Proyectos</h2>
-    <ul id="projects"></ul>
-  </div>
+    <!-- Formulario para añadir proyectos -->
+    <section class="add-project-section">
+      <h2>Añadir Proyecto</h2>
+      <form class="project-form">
+        <input type="text" id="new-project-name" placeholder="Nombre del proyecto" class="input-field">
+        <input type="text" id="new-project-description" placeholder="Descripción del proyecto" class="input-field">
+        <button id="add" class="btn primary-btn">Añadir Proyecto</button>
+      </form>
+    </section>
 
-  <!-- Botones para guardar y recuperar proyectos -->
-  <button id="retrieve">Obtener Proyectos Guardados</button>
-  <button id="save">Guardar Proyectos en GitHub</button>
+    <!-- Lista de proyectos -->
+    <section id="project-list">
+      <h2>Lista de Proyectos</h2>
+      <ul id="projects" class="project-list"></ul>
+    </section>
 
+    <!-- Botones para interactuar con proyectos -->
+    <section class="button-container">
+      <button id="retrieve" class="btn primary-btn">Obtener Proyectos</button>
+      <button id="save" class="btn secondary-btn">Guardar Proyectos</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gestión de Proyectos</p>
+  </footer>
+
+  <script src="https://apis.google.com/js/api.js"></script>
   <script src="projects.js"></script>
 </body>
-</html>
+          </html>
