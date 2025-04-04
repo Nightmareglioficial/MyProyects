@@ -1,54 +1,112 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
 }
 
-h1 {
-  color: #333;
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
   font-size: 2rem;
 }
 
-input {
-  padding: 10px;
-  margin: 10px;
-  width: 50%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+main {
+  margin: 20px auto;
+  max-width: 800px;
 }
 
-button {
-  background-color: #007bff;
+h2 {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #4CAF50;
   color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+.primary-btn {
+  background: #4CAF50;
+  color: white;
 }
 
-#project-list {
-  margin-top: 20px;
+.primary-btn:hover {
+  background: #45a049;
+}
+
+.secondary-btn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.secondary-btn:hover {
+  background: #ddd;
+}
+
+/* Input Fields */
+.input-field {
+  width: calc(100% - 20px);
   padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
+/* Project List */
+.project-list {
+  list-style-type: none;
+  padding: 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
 }
+
+.project-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-list li:last-child {
+  border-bottom: none;
+}
+
+.auth-section, .add-project-section, .button-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    }
