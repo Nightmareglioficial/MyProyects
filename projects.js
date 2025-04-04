@@ -1,7 +1,7 @@
-// Variables globales
-let projects = []; // Lista para almacenar proyectos
+// Lista global de proyectos
+let projects = []; 
 
-// Añadir un nuevo proyecto
+// Función para añadir un nuevo proyecto a la lista
 function addProject() {
   const projectName = document.getElementById('new-project').value;
 
@@ -10,7 +10,7 @@ function addProject() {
     return;
   }
 
-  // Añadir el proyecto a la lista
+  // Añadir el proyecto al arreglo
   projects.push(projectName);
 
   // Renderizar los proyectos en la página
@@ -20,18 +20,18 @@ function addProject() {
   document.getElementById('new-project').value = '';
 }
 
-// Renderizar la lista de proyectos
+// Función para renderizar los proyectos en la lista de la página
 function renderProjects() {
   const projectList = document.getElementById('projects');
   projectList.innerHTML = projects.map((p, i) => `<li>${i + 1}. ${p}</li>`).join('');
 }
 
-// Guardar proyectos en GitHub
+// Función para guardar proyectos en un archivo JSON en GitHub
 async function saveToGitHub() {
   const token = prompt('Introduce tu token personal de GitHub:');
-  const repo = 'nightmareglioficial/MyProjects'; // Cambia esto a tu repositorio
-  const filePath = 'proyectos.json'; // Nombre del archivo
-  const content = btoa(JSON.stringify(projects)); // Codificar en Base64
+  const repo = 'nightmareglioficial/MyProjects'; // Repositorio de GitHub
+  const filePath = 'proyectos.json'; // Ruta del archivo
+  const content = btoa(JSON.stringify(projects)); // Codificar la lista en Base64
 
   try {
     const response = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
@@ -54,14 +54,14 @@ async function saveToGitHub() {
     }
   } catch (error) {
     console.error('Error:', error);
-    alert('Ocurrió un problema al guardar.');
+    alert('Ocurrió un problema al guardar los proyectos.');
   }
 }
 
-// Recuperar proyectos guardados desde GitHub
+// Función para recuperar proyectos guardados desde GitHub
 async function retrieveProjectsFromGitHub() {
   const token = prompt('Introduce tu token personal de GitHub:');
-  const repo = 'nightmareglioficial/MyProjects'; // Cambia esto a tu repositorio
+  const repo = 'nightmareglioficial/MyProjects'; // Repositorio de GitHub
   const filePath = 'proyectos.json'; // Ruta del archivo
 
   try {
@@ -75,8 +75,8 @@ async function retrieveProjectsFromGitHub() {
 
     if (response.ok) {
       const fileData = await response.json();
-      const decodedContent = atob(fileData.content); // Decodificar Base64
-      projects = JSON.parse(decodedContent); // Convertir JSON en arreglo
+      const decodedContent = atob(fileData.content); // Decodificar el contenido del archivo en Base64
+      projects = JSON.parse(decodedContent); // Convertir el contenido JSON en arreglo
 
       // Renderizar los proyectos recuperados
       renderProjects();
@@ -84,7 +84,7 @@ async function retrieveProjectsFromGitHub() {
       alert('¡Proyectos recuperados correctamente!');
     } else {
       const error = await response.json();
-      alert(`Error al recuperar proyectos: ${error.message}`);
+      alert(`Error al recuperar los proyectos: ${error.message}`);
     }
   } catch (error) {
     console.error('Error:', error);
@@ -92,7 +92,7 @@ async function retrieveProjectsFromGitHub() {
   }
 }
 
-// Asignar eventos a los botones
+// Vincular eventos de los botones a las funciones
 document.getElementById('add').addEventListener('click', addProject);
 document.getElementById('save').addEventListener('click', saveToGitHub);
 document.getElementById('retrieve').addEventListener('click', retrieveProjectsFromGitHub);
