@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Proyectos</title>
+  <title>Cargar Archivos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gestión de Proyectos</h1>
+  <h1>Cargar Archivos a GitHub</h1>
 
-  <div>
-    <input type="text" id="new-project" placeholder="Nombre del proyecto">
-    <button onclick="addProject()">Añadir Proyecto</button>
+  <!-- Entrada para seleccionar archivos -->
+  <div class="file-upload">
+    <label for="file-input" class="file-label">Selecciona un archivo</label>
+    <input type="file" id="file-input" style="display: none;">
   </div>
 
-  <div id="project-list">
-    <h2>Proyectos</h2>
-    <ul id="projects"></ul>
-  </div>
+  <!-- Botón para subir archivos -->
+  <button id="upload">Subir Archivo</button>
 
-  <button id="save">Guardar en GitHub</button>
-  
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script src="saveProjects.js"></script>
+  <script src="uploadFile.js"></script>
 </body>
 </html>
