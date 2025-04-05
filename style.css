@@ -34,35 +34,30 @@ body {
   }
 }
 
-header {
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-header h1 {
+/* Título con degradado animado */
+.gradient-title {
   font-size: 2.5rem;
-  color: #4CAF50;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
   text-align: center;
-  color: #007bff;
+  background: linear-gradient(90deg, #fddb3a, #2176ff, #ff5555);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextAnimation 6s infinite;
 }
 
-/* Buttons with Animations */
+@keyframes gradientTextAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Buttons with looping movement */
 .btn {
   display: inline-block;
   padding: 15px 25px;
@@ -74,13 +69,22 @@ h2 {
   border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   outline: none;
+  animation: buttonMove 4s infinite ease-in-out;
+}
+
+@keyframes buttonMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.6);
 }
 
 .btn:focus {
