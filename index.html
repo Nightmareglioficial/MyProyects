@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Fondo animado -->
+  <div class="background-animation"></div>
+
   <header>
     <h1>Gestión de Proyectos</h1>
   </header>
@@ -15,8 +18,8 @@
     <!-- Botones de autenticación y carga de API -->
     <section class="auth-section">
       <div class="button-container">
-        <button id="authenticate" class="btn primary-btn">Autenticar Usuario</button>
-        <button id="load" class="btn secondary-btn">Cargar API de Google Drive</button>
+        <button id="authenticate" class="btn">Autenticar Usuario</button>
+        <button id="load" class="btn">Cargar API de Google Drive</button>
       </div>
     </section>
 
@@ -26,7 +29,7 @@
       <form class="project-form">
         <input type="text" id="new-project-name" placeholder="Nombre del proyecto" class="input-field">
         <input type="text" id="new-project-description" placeholder="Descripción del proyecto" class="input-field">
-        <button id="add" class="btn primary-btn">Añadir Proyecto</button>
+        <button id="add" class="btn">Añadir Proyecto</button>
       </form>
     </section>
 
@@ -38,8 +41,8 @@
 
     <!-- Botones para interactuar con proyectos -->
     <section class="button-container">
-      <button id="retrieve" class="btn primary-btn">Obtener Proyectos</button>
-      <button id="save" class="btn secondary-btn">Guardar Proyectos</button>
+      <button id="retrieve" class="btn">Obtener Proyectos</button>
+      <button id="save" class="btn">Guardar Proyectos</button>
     </section>
   </main>
 
@@ -50,4 +53,4 @@
   <script src="https://apis.google.com/js/api.js"></script>
   <script src="projects.js"></script>
 </body>
-          </html>
+      </html>
